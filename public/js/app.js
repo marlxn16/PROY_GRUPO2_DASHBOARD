@@ -51,6 +51,34 @@ if(nombre === '' || edad === '' || nota === ''){
 
 
 //Ciclo WHILE
+function actualizarTabla(){
+    txt_tabla.innerHTML = '';
+
+    let i = 0;
+    while(i < estudiantes.length){
+        let est = estudiantes[i];
+        let estado = '';
+
+        if(est.nota >= 14){
+            estado = '<span class="badge bg-success">Aprobado</span>';
+        } else {
+            estado = '<span class="badge bg-danger">Reprobado</span>';
+        }
+
+        txt_tabla.innerHTML += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${est.nombre}</td>
+                <td>${est.edad}</td>
+                <td>${est.nota}</td>
+                <td>${estado}</td>
+            </tr>
+        `;
+
+        i++;
+    }
+}
+
 
 
 
